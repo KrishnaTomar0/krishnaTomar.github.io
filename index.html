@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krishna Associates | Builders, Construction & Real Estate in Greater Noida</title>
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Global Styles */
+    :root {
+      --primary: #0F172A; /* Slate Navy */
+      --secondary: #1E293B;
+      --accent: #D97706; /* Premium Gold */
+      --accent-hover: #B45309;
+      --light: #F8FAFC;
+      --text: #334155;
+      --white: #FFFFFF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background-color: var(--primary);
+      color: #94A3B8;
+      padding: 8px 5%;
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .top-bar a {
+      color: #94A3B8;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+
+    .top-bar a:hover {
+      color: var(--accent);
+    }
+
+    /* Header Navigation */
+    header {
+      background-color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .cta-btn {
+      background-color: var(--accent);
+      color: var(--white);
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .cta-btn:hover {
+      background-color: var(--accent-hover);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
+                  url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=1600&q=80') center/cover;
+      color: var(--white);
+      padding: 100px 5% 80px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #CBD5E1;
+      margin-bottom: 30px;
+    }
+
+    .hero-btns {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--white);
+      color: var(--white);
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .btn-secondary:hover {
+      background: var(--white);
+      color: var(--primary);
+    }
+
+    /* Stats Section */
+    .stats {
+      background: var(--white);
+      padding: 40px 5%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .stats-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .stat-item h3 {
+      font-size: 2rem;
+      color: var(--accent);
+    }
+
+    .stat-item p {
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 70px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    .section-header div {
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+      border-top: 4px solid var(--accent);
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card i {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    /* Project / Property Grid */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-info {
+      padding: 20px;
+    }
+
+    .project-tag {
+      background: #FEF3C7;
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .project-info h3 {
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .project-info p {
+      font-size: 0.9rem;
+      color: #64748B;
+    }
+
+    /* Contact Section */
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      background: var(--white);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .contact-info h3 {
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .info-item i {
+      font-size: 1.2rem;
+      color: var(--accent);
+      margin-top: 4px;
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      outline: none;
+      font-size: 0.95rem;
+    }
+
+    .contact-form input:focus, .contact-form textarea:focus {
+      border-color: var(--accent);
+    }
+
+    /* Floating Action Buttons */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50px;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 999;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: #94A3B8;
+      padding: 40px 5% 20px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      border-top: 1px solid var(--secondary);
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .top-bar {
+        text-align: center;
+        justify-content: center;
+      }
+      .nav-links {
+        display: none; /* Simplifies layout for mobile view */
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .contact-container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Contact Bar -->
+  <div class="top-bar">
+    <div>
+      <a href="tel:8510050682"><i class="fa-solid fa-phone"></i> +91 8510050682</a>
+      <a href="mailto:jaibhagwansalawa@gmail.com"><i class="fa-solid fa-envelope"></i> jaibhagwansalawa@gmail.com</a>
+    </div>
+    <div>
+      <span><i class="fa-solid fa-location-dot"></i> Kulesra, Greater Noida, UP</span>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <nav>
+      <a href="#" class="logo">
+        <i class="fa-solid fa-city"></i> Krishna <span>Associates</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="tel:8510050682" class="cta-btn"><i class="fa-solid fa-headset"></i> Call Now</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Building Excellence & Delivering Prime Real Estate in Greater Noida</h1>
+      <p>Your premier partner for Construction, Turnkey Building Solutions, and Quality Residential & Commercial Properties in Kulesra & Greater Noida.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="cta-btn">Enquire Today</a>
+        <a href="https://wa.me/918510050682?text=Hello,%20I%20want%20to%20know%20more%20about%20your%20properties/construction%20services." class="btn-secondary" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <div class="stats">
+    <div class="stats-container">
+      <div class="stat-item">
+        <h3>100%</h3>
+        <p>Verified Properties</p>
+      </div>
+      <div class="stat-item">
+        <h3>Quality</h3>
+        <p>Construction Material</p>
+      </div>
+      <div class="stat-item">
+        <h3>Greater Noida</h3>
+        <p>Prime Locations</p>
+      </div>
+      <div class="stat-item">
+        <h3>Transparent</h3>
+        <p>Deals & Documentation</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="section-header">
+      <h2>About Krishna Associates</h2>
+      <div></div>
+    </div>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--text);">
+      Based in <strong>Kulesra, Greater Noida</strong>, <strong>Krishna Associates</strong> is a trusted name offering end-to-end solutions across Real Estate, Civil Construction, and Building Services. Whether you are searching for plots, flats, or commercial spaces, or looking for reliable contracting to construct your dream building from the ground up, we offer unmatched quality and complete legal peace of mind.
+    </p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" style="background-color: var(--white); width: 100%; max-width: 100%;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div class="section-header">
+        <h2>Our Core Expertise</h2>
+        <div></div>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fa-solid fa-compass-drafting"></i>
+          <h3>Civil Construction</h3>
+          <p>Complete residential and commercial construction services using high-grade materials, structural strength, and modern design standards.</p>
+        </div>
+        <div class="service-card">
+          <i class="fa-solid fa-house-chimney"></i>
+          <h3>Real Estate Deals</h3>
+          <p>Buying, selling, and leasing of residential plots, independent houses, apartments, and commercial units in Greater Noida.</p>
+        </div>
+        <div class="service-card">
+          <i class="fa-solid fa-helmet-safety"></i>
+          <h3>Builders & Contractors</h3>
+          <p>Turnkey building services, structure design, layout execution, renovation, and complete project management tailored to your budget.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects & Property Types -->
+  <section id="projects">
+    <div class="section-header">
+      <h2>Featured Services & Properties</h2>
+      <div></div>
+    </div>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80" alt="Building Construction">
+        <div class="project-info">
+          <span class="project-tag">Construction</span>
+          <h3>Residential & House Construction</h3>
+          <p>Quality structure building and modern finishing work in Kulesra & nearby sectors.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80" alt="Plots">
+        <div class="project-info">
+          <span class="project-tag">Real Estate</span>
+          <h3>Residential & Freehold Plots</h3>
+          <p>Prime plot deals ready for immediate home construction with clear documentation.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Villas & Houses">
+        <div class="project-info">
+          <span class="project-tag">Builders</span>
+          <h3>Custom Independent Homes</h3>
+          <p>Turnkey home construction tailored precisely to client specifications and timelines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="section-header">
+      <h2>Contact Krishna Associates</h2>
+      <div></div>
+    </div>
+    <div class="contact-container">
+      <!-- Info Left -->
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p style="margin-bottom: 20px;">Contact us today to discuss your construction plans or real estate requirements in Greater Noida.</p>
+        
+        <div class="info-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <strong>Office Address</strong>
+            <p>Kulesra, Greater Noida, Uttar Pradesh</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <strong>Phone / Mobile</strong>
+            <p><a href="tel:8510050682" style="color: var(--text); text-decoration: none;">+91 8510050682</a></p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <strong>Email Address</strong>
+            <p><a href="mailto:jaibhagwansalawa@gmail.com" style="color: var(--text); text-decoration: none;">jaibhagwansalawa@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Right -->
+      <div class="contact-form">
+        <form onsubmit="alert('Thank you for reaching out to Krishna Associates! We will contact you shortly.'); return false;">
+          <input type="text" placeholder="Your Full Name" required>
+          <input type="tel" placeholder="Your Phone Number" required>
+          <input type="email" placeholder="Your Email Address">
+          <textarea rows="4" placeholder="How can we help you? (e.g., House construction requirement, buying a plot in Kulesra, etc.)" required></textarea>
+          <button type="submit" class="cta-btn" style="border: none; cursor: pointer; width: 100%;">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/918510050682?text=Hello%20Krishna%20Associates,%20I%20have%20an%20enquiry." class="floating-whatsapp" target="_blank" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <h3 style="color: var(--white);"><i class="fa-solid fa-city"></i> Krishna Associates</h3>
+    <p>Builders • Construction • Real Estate Consultancy</p>
+    <p>&copy; 2026 Krishna Associates. All Rights Reserved. | Kulesra, Greater Noida, UP</p>
+  </footer>
+
+</body>
+</html>
